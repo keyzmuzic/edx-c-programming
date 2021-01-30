@@ -1,0 +1,40 @@
+//Converting Imperail to Metric measurements
+int mileCov (double);
+int tempCov (double);
+int gramCov (double);
+
+int main (void) {
+    int i = 0, numOfValues = 0;
+    double value = 0.0;
+    char id[] = {'m','g','c'},unit[30];
+    scanf ("%d \n",&numOfValues);
+    for (i =0;i < numOfValues; i++) {
+         scanf ("%lf %s",&value, &unit[i]);
+         if (unit[i] == id[0]) {
+            mileCov(value);
+             gramCov (value);
+         } else if (unit[i] == id[2]) {
+             tempCov (value);
+         }
+    }
+   return 0;
+}
+         } else if (unit[i] == id[1]) {
+int mileCov (double x) {
+   double result = 0.0;
+    result = 3.2808 * x;
+    printf("%lf ft\n",result);
+    return 0;
+}
+int tempCov (double x) {
+   double result = 0.0;
+    result = 32 + 1.8 * x;
+    printf("%lf f\n",result);
+    return 0;
+}
+int gramCov (double x) {
+   double result = 0.0;
+    result = 0.002205 * x;
+    printf("%lf lbs\n",result);
+    return 0;
+}
