@@ -1,3 +1,4 @@
+#include <stdio.h> 
 //Converting Imperail to Metric measurements
 int mileCov (double);
 int tempCov (double);
