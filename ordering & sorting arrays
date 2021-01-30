@@ -1,0 +1,32 @@
+#include <stdio.h> 
+int main (void) {
+    int i = 0,j = 0, numberOfStudents = 0, studentScore = 0,moveLeft = 0;
+    scanf("%d",&numberOfStudents);
+    int scores[numberOfStudents], ogOrder[numberOfStudents],
+    rank[] = {1,2,3,4,5,6,7,8,9,10};
+     for(i = 0;i < numberOfStudents;i++) {
+        scanf("%d\n",&studentScore);
+        scores[i] = studentScore;
+        ogOrder[i] = studentScore;
+    }
+    for(j = 0;j < numberOfStudents -1;j++) {
+       for(i = 0;i < numberOfStudents -1;i++) {
+           if(scores[i] < scores[i+1]) {
+               moveLeft = scores[i+1];
+               scores[i+1] = scores[i];
+               scores[i] = moveLeft;
+           }
+       }
+   }
+   char studentName[51];
+   for(j = 0;j < numberOfStudents;j++) {
+       for(i = 0;i < numberOfStudents;i++) {
+           scanf("%s",studentName);
+           while (ogOrder[j] != scores[i]) {
+               i++;
+           } printf("%s rank is %d\n",studentName,rank[i]);
+           i = numberOfStudents;
+       }
+   }
+   return 0;
+} 
