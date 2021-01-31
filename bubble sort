@@ -1,0 +1,25 @@
+#include <stdio.h> 
+//Converting Imperail to Metric measurements
+int min (int);
+int main (void) {
+    int sampleSize = 0;
+    scanf("%d",&sampleSize);
+    min (sampleSize);
+    return 0;
+}
+int min (int x) {
+    int sampleSize [x], i = 0,j = 0, swap = 0;
+    for(i = 0;i < x;i++) {
+        scanf("%d",&sampleSize [i]);
+    }
+    for(j = 0;j < x - 1;j++) {
+        for(i = 0;i < x - 1;i++) {
+            if (sampleSize [i] < sampleSize [1 + i]) {
+                swap = sampleSize [i + 1];
+                sampleSize [i + 1] = sampleSize [i];
+                sampleSize [i] = swap;
+            }
+        }
+    } printf("%d",sampleSize [i]); 
+    return 0;
+}
