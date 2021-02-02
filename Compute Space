@@ -3,7 +3,7 @@ int computeSpace(int);
 int computeInteger(int);
 int computeDecimal(int);
 int computeChar(int);
-int validation (char, int);
+int validation (char);
 
 int main(void) {
     int howMany = 0;
@@ -13,13 +13,13 @@ int main(void) {
 }
 
 int computeSpace(int x) {
-    int num[x], i = 0, result = 0, con = 0, o = 0,total = 0;
+    int num[x], i = 0, result = 0,total = 0;
     char code[x], codes,codeValue[] = {'i','c','d'};
     for(i = 0; i < x; i++) {
         if (result == 0) {
             scanf("%d %s\n",&num[i],&code[i]);
             codes = code[i];
-            result = validation(codes,con);
+            result = validation(codes);
         } else {
             return 0;
         }
@@ -41,7 +41,7 @@ int computeSpace(int x) {
     return 0;
 }
  
-int validation (char codes, int con) {
+int validation (char codes) {
     char codeValue[] = {'i','c','d'};
     int i = 0;
         if (codes == codeValue[0]||
